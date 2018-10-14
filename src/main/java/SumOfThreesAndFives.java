@@ -18,3 +18,5 @@ public class SumOfThreesAndFives {
 
     }
 }
+
+/* wartość i równa się wartości liczby[i]. To i działa. */
