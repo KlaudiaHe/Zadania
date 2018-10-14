@@ -1,20 +1,24 @@
 import java.util.Scanner;
 
-public class Factorial {
+class Factorial
+{
+    public static void main(String args[])
+    {
+        int n, c, fact = 1;
 
-    public static void main(String[] args) {
-        System.out.print("Please type a number: ");
-        Scanner scanner = new Scanner(System.in);
-        int Number = scanner.nextInt();
-        long factorial;
-        factorial = 1;
-        while(int i <= Number)
+        System.out.println("Enter an integer to calculate it's factorial");
+        Scanner in = new Scanner(System.in);
+
+        n = in.nextInt();
+
+        if (n < 0)
+            System.out.println("Number should be non-negative.");
+        else
         {
-            factorial *= i;
-            i++;
+            for (c = 1; c <= n; c++)
+                fact = fact*c;
+
+            System.out.println("Factorial of "+n+" is = "+fact);
         }
-        System.out.printf("Factorial of %d = %d", Number, factorial);
     }
 }
-
-
