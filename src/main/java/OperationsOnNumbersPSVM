@@ -1,0 +1,174 @@
+import java.util.ArrayList;
+import java.lang.Math;
+import java.util.*;
+
+
+public class OperationsOnNumbersPSVM {
+
+
+    public static void main(String[] args) {
+
+//You provide program arguments by Editing Configurations
+        String a = args[0];
+        String b = args[1];
+        String c = args[2];
+        String d = args[3];
+        String e = args[4];
+        String f = args[5];
+
+        int argsSize= args.length;
+
+        ArrayList<Integer> integers = new ArrayList<Integer>();
+        for (int i = 0; i < argsSize; i++) {
+            integers.add(Integer.parseInt(args[i]));
+            }
+
+        int size = integers.size();
+
+        System.out.println("Integers as you entered them:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(args[i]+" ");
+        }
+
+        System.out.println("\n");
+        System.out.println("Integers from last to first");
+        for (int i =size-1; i >= 0; --i) {
+            System.out.print(integers.get(i)+" ");
+        }
+
+        System.out.println("\n");
+        System.out.println("Only integers with an uneven index");
+        for (int i = 0; i < size; i++) {
+            if (!(i % 2==0)) {
+                System.out.print(integers.get(i) + " ");
+            }
+        }
+
+
+     /*   for (int i = 0; i < integers.size(); i++) {
+            if (integers.get(i) % 3 == 0) {
+                System.out.println(integers.get(i));
+            }
+            foreach jest wygodniejsza bo od razu do mięcha się dobierasz
+*/
+        System.out.println("\n");
+        System.out.println("Only integers divisible by 3");
+        for (int x : integers) {
+            if (x % 3 == 0) {
+                System.out.print(x +" ");
+            }
+        }
+
+        System.out.println("\n");
+        System.out.println("should be a sum of all the entered integers");
+            int sum1 = 0;
+            for (int i = 0; i <size; i++) {
+            sum1 += integers.get(i);
+            }
+            System.out.print(sum1);
+
+        System.out.println("\n");
+        System.out.println("should be sum too");
+        int sum2 = 0;
+            for (int y : integers) {
+                sum2 += y;
+                }
+            System.out.println(sum2);
+
+        System.out.println("\n");
+        System.out.println("should be a sum of first four integers: ");
+        int sum3= 0;
+        if (size<4){
+            for (int i = 0; i <size; i++) {
+                sum3+=integers.get(i);
+            }
+        } else {
+        for (int i = 0; i <4; i++) {
+            sum3 += integers.get(i);
+        }}
+        System.out.println(sum3);
+
+    /*    System.out.println("Should be a sum of first 4 integers too:");
+        int sum4 = 0;
+        int i = 0;
+        for (int x : integers) {
+            if (i < 4) {
+        sum4 += x;
+        i++;
+        }
+       System.out.println(sum4);
+*/
+        System.out.println("\n");
+        System.out.println("Should be sum of last three integers greater than 1");
+        int sum5 = 0;
+        for (int i = size-3; i < size; i++) {
+            if (integers.get(i) > 1) {
+                sum5 += integers.get(i);
+            }
+        }
+            System.out.println(sum5);
+
+        System.out.println("sum of first few integers greater than 10");
+        int sum6 = 0;
+        for (int i = 0; i < size; i++) {
+            sum6 += integers.get(i);
+            if (sum6 > 10){
+                break;
+            }
+        }
+        System.out.println(sum6);
+
+        System.out.println("Should be sum of two integers from the array, that (i.e., sum) is closest to 10");
+        int leftmostIndexResult = 0;
+        int righmostIndexResult = 0;
+        int leftmostIndex = 0;
+        int rightmostIndex = size-1;
+        int diff = Integer.MAX_VALUE;
+
+            while (rightmostIndex > leftmostIndex) {
+                if ((Math.abs((integers.get(leftmostIndex) + integers.get(rightmostIndex)- 10)))<diff) {
+                    leftmostIndexResult= leftmostIndex;
+                    righmostIndexResult = rightmostIndex;
+                diff = Math.abs((integers.get(leftmostIndex) +integers.get(rightmostIndex)) -10);
+                }
+                if ((integers.get(leftmostIndex) + integers.get(rightmostIndex))> 10) {
+                    rightmostIndex--;
+                } else {
+                    leftmostIndex++;                }
+            }
+
+            //można by też rozwiązać za pomocą tablic z sumami poszcz. elementów;
+
+        System.out.println("Sum of element "+leftmostIndexResult+" (value:" +integers.get(leftmostIndexResult)+") and element "+righmostIndexResult+" (value: "+integers.get(righmostIndexResult)+ ") of entered integers, closest to 10: "+(integers.get(leftmostIndexResult) + integers.get(righmostIndexResult)));
+
+
+        System.out.println("Choose a reasonable number, by which I mean, not greater than 11:");
+
+        Scanner number = new Scanner(System.in);
+        int n = number.nextInt();
+
+        int leftmostIndexResultForN = 0;
+        int righmostIndexResultForN = 0;
+        int leftmostIndexForN = 0;
+        int rightmostIndexForN = integers.size()-1;
+        int diffForN = Integer.MAX_VALUE;
+
+
+        while (rightmostIndexForN > leftmostIndexForN) {
+            if ((Math.abs((integers.get(leftmostIndexForN) + integers.get(rightmostIndexForN)- n)))<diffForN) {
+                leftmostIndexResultForN= leftmostIndexForN;
+                righmostIndexResultForN = rightmostIndexForN;
+                diff = Math.abs((integers.get(leftmostIndexForN) +integers.get(rightmostIndexForN)) -n);
+            }
+            if ((integers.get(leftmostIndexForN) + integers.get(rightmostIndexForN))> n) {
+                rightmostIndexForN--;
+            } else {
+                leftmostIndexForN++;                }
+
+        }
+        System.out.println("Sum of element "+leftmostIndexResultForN+" (value:" +integers.get(leftmostIndexResultForN)+") and element "+righmostIndexResultForN+" (value: "+integers.get(righmostIndexResultForN)+ ") of entered integers, closest to n: "+n+", is "+(integers.get(leftmostIndexResultForN) + integers.get(righmostIndexResultForN)));
+
+
+
+
+    }}
