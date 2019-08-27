@@ -6,7 +6,7 @@ import java.lang.Math;
 class FactorialIterative {
     public static void main(String args[]) {
         int number;
-        System.out.println("Enter an integer to calculate it's factorial (negative numbers will be converted to positive numbers))");
+        System.out.println("Enter an integer to calculate it's factorial (achtung: negative numbers will be converted to positive numbers))");
         Scanner scanner = new Scanner(System.in);
             try {
                 number = scanner.nextInt();
@@ -28,5 +28,6 @@ class FactorialIterative {
         }
         return factorial;
     }
+
 
 }

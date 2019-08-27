@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class IterativeFibonacci {
+public class FibonacciIterative {
 
     public static void main(String[] args) {
-    /*  Każdy jest sumą 2 poprzednich, yyyy
+    /*  Każdy element jest sumą 2 poprzednich, yyyy
          0 + 1 -> 1
          1 + 1 -> 2
          1 + 2 -> 3 - pierwszy staje się dotychczasowym drugim, a drugi sumą swojego minionego już ja i dawnego firsta

@@ -118,7 +118,7 @@ public class OperationsOnNumbersPSVM {
         }
         System.out.println(sum6);
 
-        System.out.println("Should be sum of two integers from the array, that (i.e., sum) is closest to 10");
+        System.out.println("Should be sum of two integers from the array, closest to 10");
         int leftmostIndexResult = 0;
         int righmostIndexResult = 0;
         int leftmostIndex = 0;
@@ -137,22 +137,17 @@ public class OperationsOnNumbersPSVM {
                     leftmostIndex++;                }
             }
 
-            //można by też rozwiązać za pomocą tablic z sumami poszcz. elementów;
-
         System.out.println("Sum of element "+leftmostIndexResult+" (value:" +integers.get(leftmostIndexResult)+") and element "+righmostIndexResult+" (value: "+integers.get(righmostIndexResult)+ ") of entered integers, closest to 10: "+(integers.get(leftmostIndexResult) + integers.get(righmostIndexResult)));
 
 
         System.out.println("Choose a reasonable number, by which I mean, not greater than 11:");
-
         Scanner number = new Scanner(System.in);
         int n = number.nextInt();
-
         int leftmostIndexResultForN = 0;
         int righmostIndexResultForN = 0;
         int leftmostIndexForN = 0;
         int rightmostIndexForN = integers.size()-1;
         int diffForN = Integer.MAX_VALUE;
-
 
         while (rightmostIndexForN > leftmostIndexForN) {
             if ((Math.abs((integers.get(leftmostIndexForN) + integers.get(rightmostIndexForN)- n)))<diffForN) {

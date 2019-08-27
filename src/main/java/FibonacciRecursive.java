@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RecursiveFibonacci {
+public class FibonacciRecursive {
 
     public static void main (String args[]){
         System.out.println("How many numbers from Fibonacci series do you want to get?");

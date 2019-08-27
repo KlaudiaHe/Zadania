@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OtherPalindromes {
+public class PalindromesAgain {
 
     public static void main(String[] args) {
 

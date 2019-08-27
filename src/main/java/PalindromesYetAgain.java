@@ -4,7 +4,7 @@ import java.util.*;
 
 //Rozwiązanie Igorka
 
-public class EvenMorePalindromes {
+public class PalindromesYetAgain {
     public static void main(String[] args) {
         System.out.println("Type a word to check if it's a palindrome:");
         Scanner yourWord = new Scanner(System.in);

@@ -22,5 +22,3 @@ public class UppercaseQuit {
 
             /* niepotrzebna for loop wewnątrz */
 
-
-

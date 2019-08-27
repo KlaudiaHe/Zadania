@@ -1,14 +1,18 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class BinaryExperiment {
+public class DecimalToBinaryExperiment {
     public static void main(String[] args) {
         try {
-            System.out.println("Please enter an integer to convert it to binary: ");
+            System.out.println("Please enter an integer to convert it to binary (negative number will be converted to a positive number): ");
             Scanner scanner = new Scanner(System.in);
             int numberToBeConvertedToBinary = scanner.nextInt();
             int []binaryDivisionresults= new int[40];
             int index= 0;
+            if (numberToBeConvertedToBinary<0){
+                numberToBeConvertedToBinary=numberToBeConvertedToBinary*-1;
+            }
+            if (!(numberToBeConvertedToBinary==0)){
             int result= numberToBeConvertedToBinary;
             // You divide the given number by 2 till the number is decreased to 0 (ending the cycle of division).
             // Each time you make the division by 2, you begin with writing down the remainder from this division (0 or 1).
@@ -27,8 +31,11 @@ public class BinaryExperiment {
             // Perhaps 'result' is somehow redundant (compare with DecimalToBinaryConverter,
             // But it's meant to make calculations easier to understand:
             }
+                System.out.println("Binary version of your number: ");
             for (int i = index; --i >=0;) {
                 System.out.print(binaryDivisionresults[i]);
+            } } else {
+                System.out.println("Binary representation of 0 is 0");
             }
         } catch (InputMismatchException e) {
             System.out.println("Only integers, please");

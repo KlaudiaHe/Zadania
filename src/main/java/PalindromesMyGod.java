@@ -1,4 +1,4 @@
-public class YetAnotherPalindrome {
+public class PalindromesMyGod {
 
     public static void main(String[] args) {
         System.out.println(isItAPalindrome("gagag"));

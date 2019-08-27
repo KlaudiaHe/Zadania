@@ -1,23 +1,32 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RecursiveFactorial {
+public class FactorialRecursive {
     public static void main(String[] args) {
 
         System.out.println("Enter an integer to calculate it's factorial");
         Scanner input = new Scanner(System.in);
-       int number = input.nextInt();
-        System.out.println("Recursive factorial of number "+number+" is: "+recursiveFactorial(number));
+        try {
+            int number = input.nextInt();
+            System.out.println("Recursive factorial of number " + number + " is: " + recursiveFactorial(number));
+        } catch (InputMismatchException e) {
+            System.out.println("Integers only, please");
+        }
     }
 
-
         public static int recursiveFactorial (int number) {
-            if(number == 1){
-                return 1;
+        number= Math.abs(number);
+        int factorial =1;
+           try{
+            if(number == 0){
+                return factorial;
             }
-            return number * recursiveFactorial((number-1));
+            factorial= number * recursiveFactorial((number-1));
+        } catch (IllegalArgumentException e) {
+               System.out.println("only integers, please");
+           }
+            return factorial;
         }
-
-
 }
 /*
 class Test

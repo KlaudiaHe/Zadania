@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ReversedString {
+public class StringReversed {
         public static void main(String[] args) {
             System.out.print("Enter a String to reverse:");
             Scanner scanner = new Scanner(System.in);
